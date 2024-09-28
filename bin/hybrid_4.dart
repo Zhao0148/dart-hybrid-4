@@ -2,7 +2,6 @@ import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
 main(List<String> arguments) async {
-
   var data = await fetchUsers(size: 10);
   loopThroughUsers(data);
 }
@@ -18,6 +17,7 @@ Future<List<dynamic>> fetchUsers({size}) async {
       return [];
     }
   } catch (e) {
+    print("Error!: $e");
     return [];
   }
 }
